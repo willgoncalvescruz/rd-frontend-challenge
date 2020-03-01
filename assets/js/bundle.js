@@ -25,6 +25,7 @@
         const users = await getDevelopersList(url);
         renderPageUsers(users);
     };
+    
 
     Form.oninput = e => {
         const [email, password, button] = e.target.parentElement.children;
@@ -48,7 +49,7 @@
 
          
 
-        var url = 'www.mocky.io/v2/5dba690e3000008c00028eb6  ';
+        var url = 'http://www.mocky.io/v2/5dba690e3000008c00028eb6';
         var ajax = new XMLHttpRequest();
 
         // Seta tipo de requisição e URL com os parâmetros
@@ -100,7 +101,7 @@ console.log(resultado);
 
     function renderPageUsers(users) {
         app.classList.add('logged');
-        Login.style.display = /* completar */
+        Login.style.display = '';/* completar */
 
         const Ul = create('ul');
         Ul.classList.add('container')
@@ -116,7 +117,7 @@ console.log(resultado);
 
     // init
     (async function(){
-        const rawToken = /* completar */
+        const rawToken = '';/* completar */
         const token = rawToken ? rawToken.split('.') : null
         if (!token || token[2] < (new Date()).getTime()) {
             localStorage.removeItem('token');
