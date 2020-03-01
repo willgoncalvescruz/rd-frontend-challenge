@@ -1,6 +1,7 @@
 (() => {
-    const selector = selector => "";/* completar */
-    const create = element => "";/* completar */
+    const selector = selector => document.querySelector(selector);
+      
+    const create = element => document.createElement(element);
 
     const app = selector('#app');
 
@@ -15,7 +16,7 @@
 
     Form.onsubmit = async e => {
         e.preventDefault();
-        const [email, password] = /* completar */
+        const [email, password] = [selector('#email'), selector('#password')] /* trecho omitido */
 
         const {url} = await fakeAuthenticate(email.value, password.value);
 
@@ -32,25 +33,37 @@
             : button.removeAttribute('disabled');
     };
 
-    Form.innerHTML = /**
-    *  formulário
-    */
+    Form.innerHTML = " <input type='text' name='email' id='email' placeholder='Entre  com seu E-mail'> <input type='password' name='password' id='password' placeholder='Digite a sua senha supersecreta' minlength='5' required> <button>Entrar</button> ";
 
     app.appendChild(Logo);
     Login.appendChild(Form);
+    app.appendChild(Login);
 
     async function fakeAuthenticate(email, password) {
 
         /**
-         fazer a requisição ao URL informado
-consumir dados "url": http://www.mocky.io/v2/5dba690e3000008c00028eb6
-         {
-    url proveniente lista "url": "http://www.mocky.io/v2/5dba68fb3000007400028eb5"
-}
-
+         * bloco de código omitido
+         * aqui esperamos que você faça a requisição ao URL informado
          */
 
-        const fakeJwtToken = `${btoa(email+password)}.${btoa(data.url)}.${(new Date()).getTime()+300000}`;
+         
+
+        var url = 'www.mocky.io/v2/5dba690e3000008c00028eb6  ';
+        var ajax = new XMLHttpRequest();
+
+        // Seta tipo de requisição e URL com os parâmetros
+        ajax.open("GET", url, true);
+        // Envia a requisição
+        ajax.setRequestHeader('Accept', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9');
+        //ajax.setRequestHeader('Accept-Encoding', 'gzip, deflate');
+        ajax.setRequestHeader('Accept-Language', 'pt-BR,pt;q=0.9,en-US;q=0.8,en;q=0.7');
+        //ajax.setRequestHeader('Connection', 'keep-alive');
+        //ajax.setRequestHeader('Host', 'www.mocky.io');
+		
+        ajax.setRequestHeader('Upgrade-Insecure-Requests', '1');
+		
+		
+		      const fakeJwtToken = `${btoa(email+password)}.${btoa(data.url)}.${(new Date()).getTime()+300000}`;
         /* faltou eu completar */
 
         return data;
