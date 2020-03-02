@@ -54,6 +54,7 @@ form {
     width: 350px;
     margin: auto;
     display: grid;
+    color:rgb(105, 104, 104);
     background-color: rgb(235, 223, 223);
     padding: 15px;
     position: relative;
@@ -62,27 +63,33 @@ form {
 }
 
 form input {
-    background-color: rgb(202, 202, 202);
+    color:rgb(105, 104, 104);
     display: flex;
     align-items: center;  
     position: relative; 
     justify-content: center;
 
-}
-
-.form input,
-form button {
     width: 100%;
     margin-bottom: 7px;
     padding: 10px;
     align-items: center;
-    color:rgb(48, 46, 46);
+    color:rgb(110, 110, 110);
     background-color: rgb(202, 202, 202);
     border-radius: 3px;
     border: 0px solid rgb(255, 255, 255);
 }
 
-form button:hover {
+button {
+    width: 100%;
+    margin-bottom: 7px;
+    padding: 10px;
+    align-items: center;
+    color:rgb(255, 255, 255);
+    background-color: rgb(184, 181, 181);
+    border-radius: 3px;
+    border: 0px solid rgb(255, 255, 255);
+}
+button:hover {
     background-color: rgb(25, 161, 25);
 }
 
@@ -120,8 +127,6 @@ form button:hover {
     vertical-align: middle
      
 }
-
-
 /**
 * YOUR CODE HERE
 */

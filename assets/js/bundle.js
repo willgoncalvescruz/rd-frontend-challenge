@@ -25,7 +25,7 @@
         const users = await getDevelopersList(url);
         renderPageUsers(users);
     };
-    
+
 
     Form.oninput = e => {
         const [email, password, button] = e.target.parentElement.children;
@@ -47,7 +47,7 @@
          * aqui esperamos que você faça a requisição ao URL informado
          */
 
-         
+               
 
         var url = 'http://www.mocky.io/v2/5dba690e3000008c00028eb6';
         var ajax = new XMLHttpRequest();
@@ -62,6 +62,9 @@
         //ajax.setRequestHeader('Host', 'www.mocky.io');
 		
         ajax.setRequestHeader('Upgrade-Insecure-Requests', '1');
+
+
+        
 		
 		
 		      const fakeJwtToken = `${btoa(email+password)}.${btoa(data.url)}.${(new Date()).getTime()+300000}`;
@@ -97,6 +100,32 @@ console.log(resultado);
         /**
          * fazer segunda requisicao para carregar a lista de desenvolvedores
          */
+
+
+         // Code goes here jason will
+function loadBands() {
+  
+    var saida = '';
+    
+    var bands = [];
+    
+    $.getJSON("./assets/jason/database.json", function(data) {
+        bands = data.bands;
+        
+        for (i = 0; i < bands.length; i++) {
+          saida += '<div class="row">';
+          saida += '<div class="col-lg-4 band-img">';
+          saida += '<img src="' + bands[i].picture + '" alt="' + bands[i].name + '" title="' + bands[i].name + '">';
+          saida += '</div>';
+          saida += '</div>';
+        }
+        
+        document.getElementById('tela').innerHTML = saida;
+    });
+  }
+  // Code goes here jason will
+
+
     }
 
     function renderPageUsers(users) {
